@@ -18,4 +18,14 @@ public class LinkedList {
 
         return head;
     }
+
+    public Node addNodeAsHead(Node head, int data ){
+        Node newNode = new Node(data);
+        if (head != null) {
+            newNode.next = head;
+        }
+        head = newNode;
+        return head;
+    }
+
 }
