@@ -1,7 +1,7 @@
 package com;
 
 public class LinkedList {
-    public Node addNode(Node head, int data) {
+    public Node append(Node head, int data) {
         Node newNode = new Node(data);
 
         if (head == null) {
@@ -27,5 +27,5 @@ public class LinkedList {
         head = newNode;
         return head;
     }
-
+    
 }
