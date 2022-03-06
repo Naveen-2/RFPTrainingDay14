@@ -174,7 +174,15 @@ public class LinkedList {
         prev.next = null;
     }
 
-    public void findNodeInList(Node head, int key){
+    /**
+     *
+     * findNodeInList - method to find the position of given key
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     * @param key - the key to be found in the list
+     * @return position - position number of the key in the list is returned
+     */
+    public int findNodeInList(Node head, int key){
         Node pointer = head;
         int counter = 1;
         boolean keyFound = false;
@@ -195,7 +203,7 @@ public class LinkedList {
         } else {
             System.out.println("The entered key is not present in the list.");
         }
-
+        return counter;
     }
 
 }
