@@ -138,4 +138,16 @@ public class LinkedList {
             System.out.println("\n");
         }
     }
+
+    /**
+     * pop - this method is used to delete first node(head) in the list and replace it with second element if present
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     */
+    public Node pop(Node head) {
+        System.out.println("Deleted node from start : " + head.data);
+        head = head.next;
+        return head;
+    }
+
 }
