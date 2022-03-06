@@ -17,6 +17,7 @@ public class Main {
          * 7. Deleting last element of the list
          * 8. Finding node with specific key
          * 9. Inserting new node next to specific key
+         * 10. Deleting a node with specific key and print size of list with remaining nodes
          */
 
         /*
@@ -86,7 +87,7 @@ public class Main {
         list.findNodeInList(head7, 30);
 
         /*
-         * Insert a new node next to specific key as in UC7
+         * Insert a new node next to specific key as in UC8
          */
         Node head8 = list.addNode(null, 56);
         list.addNode(head8, 30);
@@ -95,5 +96,12 @@ public class Main {
         int position = list.findNodeInList(head8, 30);
         list.insertAt(head8, 40, position +1);
         list.printLinkedList(head8);
+
+        /*
+         * Delete a node with specific key and print size of list as in UC9
+         */
+        list.deleteNode(head8, 40);
+        list.printLinkedList(head8);
+        list.size(head8);
     }
 }

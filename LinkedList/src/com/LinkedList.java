@@ -187,6 +187,10 @@ public class LinkedList {
         int counter = 1;
         boolean keyFound = false;
 
+        /*
+        keyFound value will be changed to true if the key is found in list
+        and then the position will be returned
+         */
         while (pointer.next != null) {
             if(pointer.data == key){
                 keyFound = true;
@@ -202,8 +206,42 @@ public class LinkedList {
             System.out.println("Node with key " + key + " is found in the list at position "+counter+".");
         } else {
             System.out.println("The entered key is not present in the list.");
+            return -1;
         }
         return counter;
     }
 
+    /**
+     * size - method to print number of nodes in the list
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     */
+    public void size(Node head) {
+        Node pointer = head;
+        int counter = 1;
+
+        while (pointer.next != null) {
+            pointer = pointer.next;
+            counter++;
+        }
+        System.out.println("Size of the list is " + counter);
+    }
+
+    /**
+     * deleteNode - method to delete specific node
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     * @param key - key to be deleted from the list
+     */
+    public void deleteNode(Node head, int key) {
+        Node pointer = head;
+        int position = findNodeInList(head, key);
+        if(position != -1) {
+            for (int i = 1; i < position - 1; i++) {
+                pointer = pointer.next;
+            }
+            pointer.next = pointer.next.next;
+            System.out.println("The entered key is deleted successfully.");
+        }
+    }
 }
