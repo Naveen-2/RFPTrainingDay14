@@ -146,6 +146,9 @@ public class LinkedList {
      */
     public Node pop(Node head) {
         System.out.println("Deleted node from start : " + head.data);
+        /*
+        head node is directly changed to it's head.next
+         */
         head = head.next;
         return head;
     }
@@ -158,7 +161,10 @@ public class LinkedList {
     public void popLast(Node head) {
         Node pointer = head;
         Node prev = null;
-
+        /*
+         * pointer will be moved to second last node in the list
+         * And then it's next will be changed to null to remove last node from the list.
+         */
         while (pointer.next != null) {
             prev = pointer;
             pointer = pointer.next;
@@ -166,6 +172,30 @@ public class LinkedList {
         System.out.println("Deleted node from end : " + pointer.data);
         assert prev != null;
         prev.next = null;
+    }
+
+    public void findNodeInList(Node head, int key){
+        Node pointer = head;
+        int counter = 1;
+        boolean keyFound = false;
+
+        while (pointer.next != null) {
+            if(pointer.data == key){
+                keyFound = true;
+                break;
+            }
+            pointer = pointer.next;
+            counter++;
+        }
+        if(pointer.data == key)
+            keyFound = true;
+
+        if(keyFound){
+            System.out.println("Node with key " + key + " is found in the list at position "+counter+".");
+        } else {
+            System.out.println("The entered key is not present in the list.");
+        }
+
     }
 
 }

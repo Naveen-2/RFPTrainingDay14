@@ -15,6 +15,7 @@ public class Main {
          * 5. Insert node in between two nodes
          * 6. Deleting first element of the list
          * 7. Deleting last element of the list
+         * 8. Finding node with specific key
          */
 
         /*
@@ -73,5 +74,14 @@ public class Main {
         list.printLinkedList(head6);
         list.popLast(head6);
         list.printLinkedList(head6);
+
+        /*
+         * Find a specific key if available as in UC7
+         */
+        Node head7 = list.addNode(null, 56);
+        list.addNode(head7, 30);
+        list.addNode(head7, 70);
+        list.printLinkedList(head7);
+        list.findNodeInList(head7, 30);
     }
 }
