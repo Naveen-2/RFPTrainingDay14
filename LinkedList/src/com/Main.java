@@ -18,6 +18,7 @@ public class Main {
          * 8. Finding node with specific key
          * 9. Inserting new node next to specific key
          * 10. Deleting a node with specific key and print size of list with remaining nodes
+         * 11. Sorting the given list
          */
 
         /*
@@ -103,5 +104,11 @@ public class Main {
         list.deleteNode(head8, 40);
         list.printLinkedList(head8);
         list.size(head8);
+
+        /*
+         * Sort the provided list
+         */
+        list.sortList(head8);
+        list.printLinkedList(head8);
     }
 }

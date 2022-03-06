@@ -244,4 +244,37 @@ public class LinkedList {
             System.out.println("The entered key is deleted successfully.");
         }
     }
+
+    /**
+     * sortList - method to sort the given list
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     */
+    public void sortList(Node head){
+        Node pointer = head, index;
+        int temp;
+        if (head != null) {
+            while (pointer != null) {
+                /* Node index will point to node next to
+                 pointer */
+                index = pointer.next;
+                while (index != null) {
+                    /* If current node's data is greater
+                     than index's node data, swap the data
+                     between them
+                    */
+                    if (pointer.data > index.data) {
+                        temp = pointer.data;
+                        pointer.data = index.data;
+                        index.data = temp;
+                    }
+                    index = index.next;
+                }
+                pointer = pointer.next;
+            }
+            System.out.println("Sorted list: ");
+        } else {
+            System.out.println("Given list is empty.");
+        }
+    }
 }
