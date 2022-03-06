@@ -150,4 +150,22 @@ public class LinkedList {
         return head;
     }
 
+    /**
+     * pop - this method is used to delete last node(head) in the list
+     *
+     * @param head - accepting head pointer of LinkedList to print it
+     */
+    public void popLast(Node head) {
+        Node pointer = head;
+        Node prev = null;
+
+        while (pointer.next != null) {
+            prev = pointer;
+            pointer = pointer.next;
+        }
+        System.out.println("Deleted node from end : " + pointer.data);
+        assert prev != null;
+        prev.next = null;
+    }
+
 }
